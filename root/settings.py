@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     # third party apps
 
     # my apps
+    'user',
     'website',
 ]
 
@@ -37,7 +38,7 @@ ROOT_URLCONF = 'root.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -51,6 +52,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'root.wsgi.application'
+
+AUTH_USER_MODEL = 'user.User'
 
 DATABASES = {
     "default": {
