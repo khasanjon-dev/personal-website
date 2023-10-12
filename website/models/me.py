@@ -51,3 +51,6 @@ class SocialMedia(Model):
 
     class Meta:
         verbose_name_plural = 'SocialMedia'
+
+    def __str__(self):
+        return self.name
