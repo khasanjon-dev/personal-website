@@ -7,10 +7,14 @@ class Me(Model):
     position = CharField(max_length=150)
     email = EmailField(max_length=100)
     phone = CharField(max_length=20)
-    place = CharField(250)
-    picture = ImageField(upload_to='images/home/')
     location = CharField(max_length=250)
+    picture = ImageField(upload_to='images/home/')
 
+    class Meta:
+        verbose_name_plural = 'Me'
+
+    def __str__(self):
+        return self.first_name
 
 
 class About(Model):
@@ -18,9 +22,16 @@ class About(Model):
     picture = ImageField(upload_to='images/about/')
     cv_file = FileField(upload_to='files/about/cv/')
 
+    class Meta:
+        verbose_name_plural = 'About'
+
 
 class Skills(Model):
     name = CharField(max_length=250)
+
+    class Meta:
+        verbose_name_plural = 'Skills'
+
 
 class WorkExperience(Model):
     position = CharField(max_length=250)
@@ -30,7 +41,13 @@ class WorkExperience(Model):
     company_name = CharField(max_length=250)
     location = CharField(max_length=250)
 
+    class Meta:
+        verbose_name_plural = 'WorkExperience'
+
 
 class SocialMedia(Model):
     name = CharField(max_length=250)
     url = CharField(max_length=250)
+
+    class Meta:
+        verbose_name_plural = 'SocialMedia'

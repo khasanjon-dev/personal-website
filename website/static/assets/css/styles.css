@@ -264,7 +264,7 @@ a {
 
 .mini-separator {
   padding: 20px 0; }
-  
+
   section {
     //padding: 60px 0;
     //padding-bottom: 30px;
@@ -536,7 +536,7 @@ ul {
   background-image: url(../images/extra-feature-bg.jpg); }
 
 .map-image {
-  background-image: url(../images/map-color-overlay.png); }
+  background-image: url(../images/  ); }
 
 .mt-30 {
   margin-top: 30px; }
@@ -1771,7 +1771,7 @@ body {
 */
 .old {
   /*==============
-            Overlay            
+            Overlay
   ================== */
   /*  Navigation Menu */ }
   .old .navbar-collapse {

@@ -7,3 +7,6 @@ make:
 
 mig:
 	python3 manage.py migrate
+
+admin:
+	python3 manage.py createsuperuser --username admin
