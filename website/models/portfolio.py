@@ -1,38 +1,27 @@
 from django.db.models import CharField, Model, TextField, ForeignKey, CASCADE, ImageField
 
 
-class CategoryPortfolio(Model):
-    name = CharField(max_length=250)
-
-    class Meta:
-        verbose_name_plural = 'CategoryPortfolio'
-
-class Portfolio(Model):
+class Project(Model):
     title = CharField(max_length=400)
     description = TextField()
+    picture = ImageField(upload_to='images/projects')
 
-    # relationship
-    category = ForeignKey(CategoryPortfolio, CASCADE)
+    # data
+    created_at = CharField(max_length=100)
+    updated_at = CharField(max_length=100)
+    github_link = CharField(max_length=300)
 
-    class Meta:
-        verbose_name_plural = 'Portfolio'
+    def __str__(self):
+        return self.title
 
 
-class UseTechnologies(Model):
+class UsageTechnology(Model):
     name = CharField(max_length=250)
-
     # relationship
-    portfolio = ForeignKey(Portfolio, CASCADE)
-    class Meta:
-        verbose_name_plural = 'UseTechnologies'
-
-
-class Images(Model):
-    image = ImageField(upload_to='images/portfolio')
-    description = TextField()
-
-    # relationship
-    portfolio = ForeignKey(Portfolio, CASCADE)
+    project = ForeignKey(Project, CASCADE)
 
     class Meta:
-        verbose_name_plural = 'Images'
+        verbose_name_plural = 'Usage Technologies'
+
+    def __str__(self):
+        return self.name

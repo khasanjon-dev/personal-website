@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from website.models import Me, About, Skills, WorkExperience, SocialMedia, CategoryPortfolio, Portfolio, \
-    UseTechnologies, Images
+from website.models import Me, About, Skills, WorkExperience, SocialMedia, Project, UsageTechnology
 
 
 @admin.register(Me)
@@ -29,21 +28,11 @@ class SocialMediaAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(CategoryPortfolio)
-class CategoryPortfolioAdmin(admin.ModelAdmin):
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Portfolio)
-class PortfolioAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(UseTechnologies)
-class UseTechnologiesAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(Images)
-class ImagesAdmin(admin.ModelAdmin):
+@admin.register(UsageTechnology)
+class UsageTechnologyAdmin(admin.ModelAdmin):
     pass

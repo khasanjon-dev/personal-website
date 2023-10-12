@@ -25,12 +25,18 @@ class About(Model):
     class Meta:
         verbose_name_plural = 'About'
 
+    def __str__(self):
+        return self.about_me
+
 
 class Skills(Model):
     name = CharField(max_length=250)
 
     class Meta:
         verbose_name_plural = 'Skills'
+
+    def __str__(self):
+        return self.name
 
 
 class WorkExperience(Model):
@@ -43,6 +49,9 @@ class WorkExperience(Model):
 
     class Meta:
         verbose_name_plural = 'WorkExperience'
+
+    def __str__(self):
+        return self.position
 
 
 class SocialMedia(Model):

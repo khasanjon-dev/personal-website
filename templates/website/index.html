@@ -83,10 +83,10 @@
                             <a class="nav-link" href="#mh-experience">Experiences</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#mh-portfolio">Portfolio</a>
+                            <a class="nav-link" href="#mh-project">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#mh-blog">Blog</a>
+                            <a class="nav-link" href="#mh-blog">Articles</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#mh-contact">Contact</a>
@@ -274,182 +274,87 @@
 
 <!--
 ===================
-   PORTFOLIO
+   PROJECTS
 ===================
 -->
-<section class="mh-portfolio" id="mh-portfolio">
+<section class="mh-blog" id="mh-project">
     <div class="container">
         <div class="row section-separator">
-            <div class="section-title col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                <h3>Recent Portfolio</h3>
+            <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                <h3>Projects</h3>
             </div>
-            <div class="part col-sm-12">
-                <div class="portfolio-nav col-sm-12" id="filter-button">
-                    <ul>
-                        <li data-filter="*" class="current wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                            <span>All Categories</span></li>
-                        <li data-filter=".user-interface" class="wow fadeInUp" data-wow-duration="0.8s"
-                            data-wow-delay="0.2s"><span>Web Design</span></li>
-                        <li data-filter=".branding" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <span>Branding</span></li>
-                        <li data-filter=".mockup" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                            <span>Mockups</span></li>
-                        <li data-filter=".ui" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><span>Photography</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mh-project-gallery col-sm-12 wow fadeInUp" id="project-gallery" data-wow-duration="0.8s"
-                     data-wow-delay="0.5s">
-                    <div class="portfolioContainer row">
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface">
-                            <figure>
-                                <img src="{% static 'assets/images/portfolio/g1.jpg' %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">Creative Design</h5>
-                                    <span class="sub-title">Photograpy</span>
-                                    <a data-fancybox data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
+            <div class="col-md-6 col-lg-4 infinite-item">
+                <div class="blog-item">
+                    <a href="/en/projects/django-rest-framework-e-trade-api-project/">
+                        <div class="image-blog">
+                            <img src="media/{{ project.picture }}"
+                                 style="height: 300px" alt="/">
                         </div>
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 ui mockup">
-                            <figure>
-                                <img src="{% static 'assets/images/portfolio/g2.png' %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">Creative Design</h5>
-                                    <span class="sub-title">Photograpy</span>
-                                    <a href="{% static 'assets/images/portfolio/g2.png' %}" data-fancybox
-                                       data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface">
-                            <figure>
-                                <img src="{% static 'assets/images/portfolio/g3.png' %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">Creative Design</h5>
-                                    <span class="sub-title">Photograpy</span>
-                                    <a href="{% static 'assets/images/portfolio/g3.png' %}" data-fancybox
-                                       data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
-                            <figure>
-                                <img src="{% static 'assets/images/portfolio/g5.png' %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">Creative Design</h5>
-                                    <span class="sub-title">Photograpy</span>
-                                    <a href="{% static 'assets/images/portfolio/g5.png' %}" data-fancybox
-                                       data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface">
-                            <figure>
-                                <img src="{% static 'assets/images/portfolio/g4.png' %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">Creative Design</h5>
-                                    <span class="sub-title">Photograpy</span>
-                                    <a href="{% static 'assets/images/portfolio/g4.png' %}" data-fancybox
-                                       data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
-                            <figure>
-                                <img src="{% static 'assets/images/portfolio/g6.png' %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">Creative Design</h5>
-                                    <span class="sub-title">Photograpy</span>
-                                    <a href="{% static 'assets/images/portfolio/g6.png' %}" data-fancybox
-                                       data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
-                            <figure>
-                                <img src="{% static 'assets/images/portfolio/g8.png' %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">Creative Design</h5>
-                                    <span class="sub-title">Photograpy</span>
-                                    <a href="{% static 'assets/images/portfolio/g8.png' %}" data-fancybox
-                                       data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 ui">
-                            <figure>
-                                <img src="{% static 'assets/images/portfolio/g9.png' %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">Creative Design</h5>
-                                    <span class="sub-title">Photograpy</span>
-                                    <a href="{% static 'assets/images/portfolio/g9.png' %}" data-fancybox
-                                       data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
-                            <figure>
-                                <img src="{% static 'assets/images/portfolio/g7.jpg' %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">Creative Design</h5>
-                                    <span class="sub-title">Photograpy</span>
-                                    <a href="{% static 'assets/images/portfolio/g7.jpg' %}" data-fancybox="gallery"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div> <!-- End: .grid .project-gallery -->
-                </div> <!-- End: .grid .project-gallery -->
-            </div> <!-- End: .part -->
-        </div> <!-- End: .row -->
-    </div>
-    <div class="mh-portfolio-modal" id="mh">
-        <div class="container">
-            <div class="row mh-portfolio-modal-inner">
-                <div class="col-sm-5">
-                    <h2>Wrap - A campanion plugin</h2>
-                    <p>Wrap is a clean and elegant Multipurpose Landing Page Template.
-                        It will fit perfectly for Startup, Web App or any type of Web Services.
-                        It has 4 background styles with 6 homepage styles. 6 pre-defined color scheme.
-                        All variations are organized separately so you can use / customize the template very easily.</p>
+                    </a>
+                    <div class="blog-box">
+                        <div class="blog-time">{{ project.created_at }}</div>
 
-                    <p>It is a clean and elegant Multipurpose Landing Page Template.
-                        It will fit perfectly for Startup, Web App or any type of Web Services.
-                        It has 4 background styles with 6 homepage styles. 6 pre-defined color scheme.
-                        All variations are organized separately so you can use / customize the template very easily.</p>
-                    <div class="mh-about-tag">
-                        <ul>
-                            <li><span>php</span></li>
-                            <li><span>html</span></li>
-                            <li><span>css</span></li>
-                            <li><span>php</span></li>
-                            <li><span>wordpress</span></li>
-                            <li><span>React</span></li>
-                            <li><span>Javascript</span></li>
+                        <div class="blog-time">{{ project.updated_at }}</div>
+
+                        <h5 class="Blog-title mb-0"><a href="">Rest Framework E-Commerce System API</a></h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+
+                                <span class="badge badge-success">Python</span>
+
+                                <span class="badge badge-success">Django</span>
+
+                                <span class="badge badge-success">Rest Framework</span>
+
+                                <span class="badge badge-success">PostgreSQL</span>
+
+                            </li>
                         </ul>
+                        <p class="mb-0">A comprehensive e-commerce API project that I developed with Django REST
+                            Framework and Postgresql.</p>
+                        <div class="blog-link">
+                        </div>
                     </div>
-                    <a href="#" class="btn btn-fill">Live Demo</a>
-                </div>
-                <div class="col-sm-7">
-                    <div class="mh-portfolio-modal-img">
-                        <img src="{% static 'assets/images/pr-0.jif' %}" alt="" class="img-fluid">
-                        <p>All variations are organized separately so you can use / customize the template very
-                            easily.</p>
-                        <img src="{% static 'assets/images/pr-1.jif' %}" alt="" class="img-fluid">
-                        <p>All variations are organized separately so you can use / customize the template very
-                            easily.</p>
-                    </div>
+                    <a href="/en/projects/django-rest-framework-e-trade-api-project/" class="btn btn-danger">Details</a>
+
+                    <a href="https://github.com/Brktrlw/E-trade-With-RestAPI" class="btn btn-warning">Github</a>
+
                 </div>
             </div>
+            {#            <div class="col-sm-12 col-md-4">#}
+            {#                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">#}
+            {#                    <img src="{% static 'assets/images/b-2.png' %}" alt="" class="img-fluid">#}
+            {#                    <div class="blog-inner">#}
+            {#                        <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>#}
+            {#                        <div class="mh-blog-post-info">#}
+            {#                            <ul>#}
+            {#                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>#}
+            {#                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>#}
+            {#                            </ul>#}
+            {#                        </div>#}
+            {#                        <p>It is a long established fact that a reader will be distracted by the readable content of a#}
+            {#                            page when looking at its layout</p>#}
+            {#                        <a href="blog-single.html">Read More</a>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+            {#            <div class="col-sm-12 col-md-4">#}
+            {#                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">#}
+            {#                    <img src="{% static 'assets/images/b-1.png' %}" alt="" class="img-fluid">#}
+            {#                    <div class="blog-inner">#}
+            {#                        <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>#}
+            {#                        <div class="mh-blog-post-info">#}
+            {#                            <ul>#}
+            {#                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>#}
+            {#                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>#}
+            {#                            </ul>#}
+            {#                        </div>#}
+            {#                        <p>It is a long established fact that a reader will be distracted by the readable content of a#}
+            {#                            page when looking at its layout</p>#}
+            {#                        <a href="blog-single.html">Read More</a>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
         </div>
     </div>
 </section>
@@ -462,7 +367,7 @@
     <div class="container">
         <div class="row section-separator">
             <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                <h3>Featured Posts</h3>
+                <h3>Articles</h3>
             </div>
             <div class="col-sm-12 col-md-4">
                 <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
