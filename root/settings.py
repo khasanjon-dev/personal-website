@@ -3,7 +3,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv('../.env')
+load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -22,7 +22,6 @@ INSTALLED_APPS = [
     # third party apps
 
     # my apps
-    'user',
     'website',
 ]
 
@@ -55,8 +54,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'root.wsgi.application'
-
-AUTH_USER_MODEL = 'user.User'
 
 DATABASES = {
     "default": {
