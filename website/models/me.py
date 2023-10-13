@@ -8,7 +8,7 @@ class Me(Model):
     email = EmailField(max_length=100)
     phone = CharField(max_length=20)
     location = CharField(max_length=250)
-    picture = ImageField(upload_to='images/home/')
+    picture = ImageField(upload_to='images/')
 
     class Meta:
         verbose_name_plural = 'Me'
@@ -19,8 +19,7 @@ class Me(Model):
 
 class About(Model):
     about_me = TextField()
-    picture = ImageField(upload_to='images/about/')
-    cv_file = FileField(upload_to='files/about/cv/')
+    picture = ImageField(upload_to='images/')
 
     class Meta:
         verbose_name_plural = 'About'
