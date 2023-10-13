@@ -403,43 +403,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-10 wow fadeInUp mx-auto" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <form action="{% url 'send-email' %}" method="post"
-                          class="single-form quate-form wow fadeInUp" data-toggle="validator"
-                    > {% csrf_token %}
-                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <input name="first_name" class="contact-name form-control" id="name" type="text"
-                                       placeholder="First Name" required>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <input name="last_name" class="contact-email form-control" id="L_name" type="text"
-                                       placeholder="Last Name">
-                            </div>
-                            <div class="col-sm-12">
-                                <input name="email" class="contact-subject form-control" id="email" type="email"
-                                       placeholder="Your Email" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <textarea name="message" class="contact-message" id="message" rows="6"
-                                          placeholder="Your Message" required></textarea>
-                            </div>
-                            <!-- Subject Button -->
-                            <div class="btn-form col-sm-12">
-                                <input type="submit" class="btn btn-fill btn-block" value="Send Message"
-                                       id="form-submit">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-6">
-                    <div class="col-sm-12 mh-copyright wow fadeInUp text-left" data-wow-duration="0.8s"
+                <div class="col-md-12">
+                    <div data-wow-duration="0.8s"
                          data-wow-delay="0.3s">
                         <div class="row">
                             <div class="col-sm-12">
-                                <ul class="social-icon">
-                                    <h3>
+                                <ul class="social-icon mx-auto">
+                                    <h1>
                                         {% for s in social %}
                                             {% if s.name == 'instagram' %}
                                                 <li><a href="{{ s.url }}"><i class="fa fa-instagram"></i></a></li>
@@ -448,9 +418,8 @@
                                             {% else %}
                                                 <li><a href="{{ s.url }}"><i class="fa fa-telegram"></i></a></li>
                                             {% endif %}
-
                                         {% endfor %}
-                                    </h3>
+                                    </h1>
                                 </ul>
                             </div>
                         </div>
