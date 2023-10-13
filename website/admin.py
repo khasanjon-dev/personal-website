@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from website.models import Me, About, Skills, WorkExperience, SocialMedia, Project, UsageTechnology
+from website.models import Me, About, Skills, WorkExperience, SocialMedia, Project
 
 
 @admin.register(Me)
@@ -30,9 +30,4 @@ class SocialMediaAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(UsageTechnology)
-class UsageTechnologyAdmin(admin.ModelAdmin):
     pass

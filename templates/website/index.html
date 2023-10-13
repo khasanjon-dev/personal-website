@@ -283,78 +283,38 @@
             <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                 <h3>Projects</h3>
             </div>
-            <div class="col-md-6 col-lg-4 infinite-item">
-                <div class="blog-item">
-                    <a href="/en/projects/django-rest-framework-e-trade-api-project/">
-                        <div class="image-blog">
-                            <img src="media/{{ project.picture }}"
-                                 style="height: 300px" alt="/">
-                        </div>
-                    </a>
-                    <div class="blog-box">
-                        <div class="blog-time">{{ project.created_at }}</div>
 
-                        <div class="blog-time">{{ project.updated_at }}</div>
+            {% for project in projects %}
+                <div class="col-sm-12 col-md-4">
+                    <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                        <img src="media/{{ project.picture }}" alt="" class="img-fluid">
+                        <div class="blog-inner">
+                            <h2><a>{{ project.title }}</a></h2>
+                            <div class="mh-blog-post-info">
+                                <ul class="list-inline">
+                                    <li><strong>Create At</strong><a>{{ project.created_at }}</a></li>
+                                    <li class="list-inline-item">
 
-                        <h5 class="Blog-title mb-0"><a href="">Rest Framework E-Commerce System API</a></h5>
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
+                                        {% for tech in project.usage_technology %}
+                                            <span class="badge badge-success">{{ tech }}</span>
+                                        {% endfor %}
 
-                                <span class="badge badge-success">Python</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p>
+                                {{ project.description }}
+                            </p>
+                            <a href="/en/projects/django-rest-framework-e-trade-api-project/"
+                               class="btn btn-danger" style="color: white">Details</a>
 
-                                <span class="badge badge-success">Django</span>
-
-                                <span class="badge badge-success">Rest Framework</span>
-
-                                <span class="badge badge-success">PostgreSQL</span>
-
-                            </li>
-                        </ul>
-                        <p class="mb-0">A comprehensive e-commerce API project that I developed with Django REST
-                            Framework and Postgresql.</p>
-                        <div class="blog-link">
+                            <a href="{{ project.github_link }}" class="btn btn-warning"
+                               style="color: white">Github</a>
                         </div>
                     </div>
-                    <a href="/en/projects/django-rest-framework-e-trade-api-project/" class="btn btn-danger">Details</a>
-
-                    <a href="https://github.com/Brktrlw/E-trade-With-RestAPI" class="btn btn-warning">Github</a>
-
                 </div>
-            </div>
-            {#            <div class="col-sm-12 col-md-4">#}
-            {#                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">#}
-            {#                    <img src="{% static 'assets/images/b-2.png' %}" alt="" class="img-fluid">#}
-            {#                    <div class="blog-inner">#}
-            {#                        <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>#}
-            {#                        <div class="mh-blog-post-info">#}
-            {#                            <ul>#}
-            {#                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>#}
-            {#                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>#}
-            {#                            </ul>#}
-            {#                        </div>#}
-            {#                        <p>It is a long established fact that a reader will be distracted by the readable content of a#}
-            {#                            page when looking at its layout</p>#}
-            {#                        <a href="blog-single.html">Read More</a>#}
-            {#                    </div>#}
-            {#                </div>#}
-            {#            </div>#}
-            {#            <div class="col-sm-12 col-md-4">#}
-            {#                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">#}
-            {#                    <img src="{% static 'assets/images/b-1.png' %}" alt="" class="img-fluid">#}
-            {#                    <div class="blog-inner">#}
-            {#                        <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>#}
-            {#                        <div class="mh-blog-post-info">#}
-            {#                            <ul>#}
-            {#                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>#}
-            {#                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>#}
-            {#                            </ul>#}
-            {#                        </div>#}
-            {#                        <p>It is a long established fact that a reader will be distracted by the readable content of a#}
-            {#                            page when looking at its layout</p>#}
-            {#                        <a href="blog-single.html">Read More</a>#}
-            {#                    </div>#}
-            {#                </div>#}
-            {#            </div>#}
+            {% endfor %}
+
         </div>
     </div>
 </section>
@@ -371,43 +331,9 @@
             </div>
             <div class="col-sm-12 col-md-4">
                 <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <img src="{% static 'assets/images/b-3.png' %}" alt="" class="img-fluid">
+                    <img src="media/{{ project.picture }}" alt="" class="img-fluid">
                     <div class="blog-inner">
                         <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
-                        <div class="mh-blog-post-info">
-                            <ul>
-                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                            </ul>
-                        </div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout</p>
-                        <a href="blog-single.html">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                    <img src="{% static 'assets/images/b-2.png' %}" alt="" class="img-fluid">
-                    <div class="blog-inner">
-                        <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
-                        <div class="mh-blog-post-info">
-                            <ul>
-                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                            </ul>
-                        </div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout</p>
-                        <a href="blog-single.html">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                    <img src="{% static 'assets/images/b-1.png' %}" alt="" class="img-fluid">
-                    <div class="blog-inner">
-                        <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>
                         <div class="mh-blog-post-info">
                             <ul>
                                 <li><strong>Post On</strong><a href="#">24.11.19</a></li>
@@ -477,51 +403,56 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-10 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                <div class="col-sm-12 col-md-10 wow fadeInUp mx-auto" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                    <form action="{% url 'send-email' %}" method="post"
+                          class="single-form quate-form wow fadeInUp" data-toggle="validator"
+                    > {% csrf_token %}
                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
-                                <input name="name" class="contact-name form-control" id="name" type="text"
+                                <input name="first_name" class="contact-name form-control" id="name" type="text"
                                        placeholder="First Name" required>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                <input name="name" class="contact-email form-control" id="L_name" type="text"
+                                <input name="last_name" class="contact-email form-control" id="L_name" type="text"
                                        placeholder="Last Name">
                             </div>
                             <div class="col-sm-12">
-                                <input name="name" class="contact-subject form-control" id="email" type="email"
+                                <input name="email" class="contact-subject form-control" id="email" type="email"
                                        placeholder="Your Email" required>
                             </div>
                             <div class="col-sm-12">
-                                <textarea class="contact-message" id="message" rows="6" placeholder="Your Message"
-                                          required></textarea>
+                                <textarea name="message" class="contact-message" id="message" rows="6"
+                                          placeholder="Your Message" required></textarea>
                             </div>
                             <!-- Subject Button -->
                             <div class="btn-form col-sm-12">
-                                <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message
-                                </button>
+                                <input type="submit" class="btn btn-fill btn-block" value="Send Message"
+                                       id="form-submit">
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <ul class="social-icon">
-                                <h3>
-                                    {% for s in social %}
-                                        {% if s.name == 'instagram' %}
-                                            <li><a href="{{ s.url }}"><i class="fa fa-instagram"></i></a></li>
-                                        {% elif s.name == 'github' %}
-                                            <li><a href="{{ s.url }}"><i class="fa fa-github"></i></a></li>
-                                        {% else %}
-                                            <li><a href="{{ s.url }}"><i class="fa fa-telegram"></i></a></li>
-                                        {% endif %}
+                <div class="col-md-6">
+                    <div class="col-sm-12 mh-copyright wow fadeInUp text-left" data-wow-duration="0.8s"
+                         data-wow-delay="0.3s">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="social-icon">
+                                    <h3>
+                                        {% for s in social %}
+                                            {% if s.name == 'instagram' %}
+                                                <li><a href="{{ s.url }}"><i class="fa fa-instagram"></i></a></li>
+                                            {% elif s.name == 'github' %}
+                                                <li><a href="{{ s.url }}"><i class="fa fa-github"></i></a></li>
+                                            {% else %}
+                                                <li><a href="{{ s.url }}"><i class="fa fa-telegram"></i></a></li>
+                                            {% endif %}
 
-                                    {% endfor %}
-                                </h3>
-                            </ul>
+                                        {% endfor %}
+                                    </h3>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
