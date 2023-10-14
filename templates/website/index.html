@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="{% static 'assets/images/apple-icon.png' %}">
     <link rel="shortcut icon" sizes="72x72" href="{% static 'assets/images/apple-icon-72x72.png' %}">
     <link rel="shortcut icon" sizes="114x114" href="{% static 'assets/images/apple-icon-114x114.png' %}">
-
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!-- Google Font-->
     <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Font Awesome -->
@@ -85,9 +85,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#mh-project">Projects</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#mh-blog">Articles</a>
-                        </li>
+{#                        <li class="nav-item">#}
+                        {#                            <a class="nav-link" href="#mh-blog">Articles</a>#}
+                        {#                        </li>#}
                         <li class="nav-item">
                             <a class="nav-link" href="#mh-contact">Contact</a>
                         </li>
@@ -126,20 +126,6 @@
                                     class="fa fa-map-marker"></i>
                                 <address>{{ me.location }}</address>
                             </li>
-                        </ul>
-
-                        <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                            {% for s in social %}
-                                {% if s.name == 'instagram' %}
-                                    <li><a href="{{ s.url }}"><i class="fa fa-instagram"></i></a></li>
-                                {% elif s.name == 'github' %}
-                                    <li><a href="{{ s.url }}"><i class="fa fa-github"></i></a></li>
-                                {% else %}
-                                    <li><a href="{{ s.url }}"><i class="fa fa-telegram"></i></a></li>
-                                {% endif %}
-
-                            {% endfor %}
-
                         </ul>
                     </div>
                 </div>
@@ -288,7 +274,7 @@
             {% for project in projects %}
                 <div class="col-sm-12 col-md-4">
                     <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                        <img src="{{ project.picture }}" alt="" class="img-fluid">
+                        <img src="{% get_media_prefix %}{{ project.picture }}" alt="" class="img-fluid">
                         <div class="blog-inner">
                             <h2><a>{{ project.title }}</a></h2>
                             <div class="mh-blog-post-info">
@@ -306,9 +292,6 @@
                             <p>
                                 {{ project.description }}
                             </p>
-                            <a href="/en/projects/django-rest-framework-e-trade-api-project/"
-                               class="btn btn-danger" style="color: white">Details</a>
-
                             <a href="{{ project.github_link }}" class="btn btn-warning"
                                style="color: white">Github</a>
                         </div>
@@ -324,32 +307,32 @@
    BLOG
 ===================
 -->
-<section class="mh-blog" id="mh-blog">
-    <div class="container">
-        <div class="row section-separator">
-            <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                <h3>Articles</h3>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <img src="{{ project.picture }}" alt="" class="img-fluid">
-                    <div class="blog-inner">
-                        <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
-                        <div class="mh-blog-post-info">
-                            <ul>
-                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                            </ul>
-                        </div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout</p>
-                        <a href="blog-single.html">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{#<section class="mh-blog" id="mh-blog">#}
+{#    <div class="container">#}
+{#        <div class="row section-separator">#}
+{#            <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">#}
+{#                <h3>Articles</h3>#}
+{#            </div>#}
+{#            <div class="col-sm-12 col-md-4">#}
+{#                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">#}
+{#                    <img src="{{ project.picture }}" alt="" class="img-fluid">#}
+{#                    <div class="blog-inner">#}
+{#                        <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>#}
+{#                        <div class="mh-blog-post-info">#}
+{#                            <ul>#}
+{#                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>#}
+{#                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                        <p>It is a long established fact that a reader will be distracted by the readable content of a#}
+{#                            page when looking at its layout</p>#}
+{#                        <a href="blog-single.html">Read More</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
 <!--
 ===================
    FOOTER 1
@@ -416,9 +399,16 @@
                                                 <li><a href="{{ s.url }}"><i class="fa fa-instagram"></i></a></li>
                                             {% elif s.name == 'github' %}
                                                 <li><a href="{{ s.url }}"><i class="fa fa-github"></i></a></li>
-                                            {% else %}
+                                            {% elif s.name == 'leetcode' %}
+                                                <li><a href="{{ s.url }}">
+                                                    <iconify-icon icon="simple-icons:leetcode"
+                                                                  style="color: white;"></iconify-icon>
+                                                </a></li>
+                                            {% elif s.name == 'telegram' %}
                                                 <li><a href="{{ s.url }}"><i class="fa fa-telegram"></i></a></li>
+
                                             {% endif %}
+
                                         {% endfor %}
                                     </h1>
                                 </ul>
