@@ -13,11 +13,10 @@
     <meta name="developer" content="Md. Siful Islam">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
     <!-- FAV AND ICONS   -->
-    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
-    <link rel="shortcut icon" href="{% static 'assets/images/apple-icon.png' %}">
-    <link rel="shortcut icon" sizes="72x72" href="{% static 'assets/images/apple-icon-72x72.png' %}">
-    <link rel="shortcut icon" sizes="114x114" href="{% static 'assets/images/apple-icon-114x114.png' %}">
+    <link rel="icon" href="../media/images/python.png" type="image/png">
+
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!-- Google Font-->
     <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -85,7 +84,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#mh-project">Projects</a>
                         </li>
-{#                        <li class="nav-item">#}
+                        {#                        <li class="nav-item">#}
                         {#                            <a class="nav-link" href="#mh-blog">Articles</a>#}
                         {#                        </li>#}
                         <li class="nav-item">
@@ -181,48 +180,31 @@
 -->
 <section class="mh-service">
     <div class="container">
-        <div class="row section-separator">
-            <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s"
-                 data-wow-delay="0.2s">
-                <h2>What I do</h2>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                     data-wow-delay="0.3s">
-                    <i class="fa fa-bullseye purple-color"></i>
-                    <h3>UI Design</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                        magna aliquam erat volutpat.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                     data-wow-delay="0.5s">
-                    <i class="fa fa-code iron-color"></i>
-                    <h3>Web Development</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                        magna aliquam erat volutpat.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                     data-wow-delay="0.7s">
-                    <i class="fa fa-object-ungroup sky-color"></i>
-                    <h3>App Development</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                        magna aliquam erat volutpat.
-                    </p>
-                </div>
-            </div>
+        <div class="col-sm-6 text-center section-title wow fadeInUp" data-wow-duration="0.8s"
+             data-wow-delay="0.2s">
+            <h1>What I do</h1>
         </div>
+        {% for what in what_do %}
+            <div class="row section-separator">
+                <div class="col-sm-4 col-md-4">
+                    <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s"
+                         data-wow-delay="0.4s">
+                        <img src="{% get_media_prefix %}{{ what.icon }}" alt="not found"
+                             style="height: 50%; width: 50%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="mh-about-inner"
+                         style="background: {% get_media_prefix %}{{ about.picture }}">
+                        <h2 class="wow fadeInUp" data-wow-duration="0.8s"
+                            data-wow-delay="0.1s">{{ what.title }}</h2>
+                        <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                            {{ what.description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 </section>
 
@@ -348,7 +330,8 @@
                 <div class="col-sm-12 mh-footer-address">
                     <div class="row">
                         <div class="col-sm-12 col-md-4">
-                            <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s"
+                            <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp"
+                                 data-wow-duration="0.8s"
                                  data-wow-delay="0.3s">
                                 <div class="each-icon">
                                     <i class="fa fa-location-arrow"></i>
@@ -362,7 +345,8 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s"
+                            <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp"
+                                 data-wow-duration="0.8s"
                                  data-wow-delay="0.5s">
                                 <div class="each-icon">
                                     <i class="fa fa-envelope-o"></i>
@@ -374,7 +358,8 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s"
+                            <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp"
+                                 data-wow-duration="0.8s"
                                  data-wow-delay="0.7s">
                                 <div class="each-icon">
                                     <i class="fa fa-phone"></i>

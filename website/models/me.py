@@ -1,4 +1,4 @@
-from django.db.models import Model, CharField, EmailField, ImageField, TextField, FileField
+from django.db.models import Model, CharField, EmailField, ImageField, TextField
 
 
 class Me(Model):
@@ -62,3 +62,15 @@ class SocialMedia(Model):
 
     def __str__(self):
         return self.name
+
+
+class WhatIDo(Model):
+    title = CharField(max_length=300)
+    description = TextField()
+    icon = ImageField(upload_to='images/icons/')
+
+    class Meta:
+        verbose_name_plural = 'What I Do'
+
+    def __str__(self):
+        return self.title

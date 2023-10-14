@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from website.models import Me, About, Skills, WorkExperience, SocialMedia, Project
+from website.models.me import WhatIDo
 
 
 @admin.register(Me)
@@ -30,4 +31,9 @@ class SocialMediaAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(WhatIDo)
+class WhatIDoAdmin(admin.ModelAdmin):
     pass
